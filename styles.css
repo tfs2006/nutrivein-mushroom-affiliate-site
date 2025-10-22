@@ -2,111 +2,408 @@
   --primary-green: #16813d;
   --accent-gold: #ccb560;
   --white: #fff;
+  --light-bg: #f9fdf9;
   --font-main: 'Segoe UI', Arial, sans-serif;
-  --header-height: 60px;
+  --header-height: 70px;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: var(--font-main);
   background: var(--white);
   margin: 0;
   color: #203030;
+  line-height: 1.6;
 }
-.header {
-  background: var(--primary-green);
+
+header {
+  background: linear-gradient(135deg, var(--primary-green) 0%, #1a9748 100%);
   color: var(--white);
   height: var(--header-height);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 2rem;
+  padding: 0 3rem;
+  box-shadow: var(--shadow-md);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
-.logo {
-  height: 45px;
+
+header img {
+  height: 50px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
-.header nav a {
+
+header nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+header nav a {
   color: var(--white);
   text-decoration: none;
-  margin-left: 2rem;
-  font-weight: bold;
-  transition: color 0.2s;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
 }
-.header nav a:hover {
+
+header nav a:hover {
+  background: rgba(255, 255, 255, 0.15);
   color: var(--accent-gold);
+  transform: translateY(-2px);
 }
-.hero {
+
+main {
+  min-height: 60vh;
+  padding-bottom: 3rem;
+}
+
+/* Hero Section */
+main > img:first-child,
+main > div:has(img),
+section:first-of-type {
   display: flex;
   flex-wrap: wrap;
-  padding: 3rem 1rem;
-  background: linear-gradient(90deg, #eef7ef 70%, #fff 100%);
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, #eef7ef 0%, #f9fdf9 50%, #ffffff 100%);
   align-items: center;
-  gap: 2rem;
+  gap: 3rem;
+  justify-content: center;
+  margin-bottom: 3rem;
 }
-.hero-img {
-  max-width: 330px;
-  flex: 0 1 330px;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px #8882;
-}
-.hero > div {
-  max-width: 540px;
-}
-.cta-btn {
-  display: inline-block;
-  background: var(--accent-gold);
-  color: var(--primary-green);
-  padding: 1em 2em;
-  font-weight: bold;
-  border-radius: 40px;
-  text-decoration: none;
-  font-size: 1.2em;
-  margin-top: 1rem;
-  box-shadow: 0 2px 8px #cab;
-  transition: background 0.2s;
-}
-.cta-btn:hover {
-  background: #f5da90;
-}
-.features {
-  padding: 2rem 1rem 1rem 1rem;
-  max-width: 700px;
-  margin: auto;
-}
-.features h2 {
-  color: var(--primary-green);
-}
-.features ul {
-  padding-left: 1.5rem;
-}
-.banner {
-  text-align: center;
-  margin: 2rem 0 1rem 0;
-}
-.banner img {
+
+main > img:first-child {
+  max-width: 380px;
   width: 100%;
-  max-width: 780px;
-  border-radius: 8px;
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  transition: transform 0.3s ease;
 }
-footer {
-  background: #e5efe3;
+
+main > img:first-child:hover {
+  transform: scale(1.02);
+}
+
+/* Headings */
+h1, h2, h3 {
+  color: var(--primary-green);
+  margin: 2rem 0 1.5rem;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2.8rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2.2rem;
   text-align: center;
-  padding: 1rem 0;
-  font-size: 0.98em;
-  color: #345;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
 }
-/* Mobile/Tablet */
-@media (max-width: 900px) {
-  .hero {
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-  }
-  .hero-img {
-    max-width: 100vw;
-    margin-bottom: 1rem;
-  }
-  .header {
-    flex-direction: column;
+
+h3 {
+  font-size: 1.6rem;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin: 1.5rem 0;
+  max-width: 800px;
+}
+
+/* CTA Buttons */
+a[href*="amzn"],
+a[href*="amazon"],
+button[type="submit"] {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--accent-gold) 0%, #d4c570 100%);
+  color: var(--primary-green);
+  padding: 1.2rem 3rem;
+  font-weight: 700;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1.3rem;
+  margin: 2rem auto;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  min-width: 220px;
+}
+
+a[href*="amzn"]:hover,
+a[href*="amazon"]:hover,
+button[type="submit"]:hover {
+  background: linear-gradient(135deg, #f5da90 0%, #e8d680 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(204, 181, 96, 0.4);
+}
+
+/* Feature Lists */
+ul {
+  list-style: none;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  background: var(--light-bg);
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+}
+
+li {
+  font-size: 1.1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(22, 129, 61, 0.1);
+  line-height: 1.7;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+li::before {
+  content: "✓";
+  color: var(--primary-green);
+  font-weight: bold;
+  margin-right: 1rem;
+  font-size: 1.3rem;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  max-width: 900px;
+  margin: 3rem auto;
+  border-collapse: separate;
+  border-spacing: 0;
+  box-shadow: var(--shadow-md);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+th {
+  background: linear-gradient(135deg, var(--primary-green) 0%, #1a9748 100%);
+  color: var(--white);
+  padding: 1.2rem;
+  text-align: left;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+td {
+  padding: 1.2rem;
+  border-bottom: 1px solid #e8f2e9;
+  background: var(--white);
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr:nth-child(even) td {
+  background: #f9fdf9;
+}
+
+/* Forms */
+form {
+  max-width: 600px;
+  margin: 3rem auto;
+  padding: 3rem;
+  background: var(--light-bg);
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
+}
+
+label,
+form > p {
+  display: block;
+  font-weight: 600;
+  margin: 1.5rem 0 0.5rem;
+  color: var(--primary-green);
+  font-size: 1.05rem;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  border: 2px solid #d0e8d6;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: var(--font-main);
+  transition: border-color 0.3s ease;
+  background: var(--white);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary-green);
+  box-shadow: 0 0 0 3px rgba(22, 129, 61, 0.1);
+}
+
+textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+button[type="submit"] {
+  margin-top: 2rem;
+  width: 100%;
+}
+
+/* Footer */
+body > *:last-child,
+main + * {
+  text-align: center;
+  padding: 2.5rem 2rem;
+  background: linear-gradient(135deg, #eef7ef 0%, #f9fdf9 100%);
+  color: #4a5f4a;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-top: 4rem;
+  border-top: 3px solid var(--primary-green);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  header {
+    padding: 0 1.5rem;
     height: auto;
-    padding: 1.2rem 1rem;
+    min-height: var(--header-height);
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  header img {
+    height: 40px;
+  }
+
+  header nav {
+    width: 100%;
+    justify-content: center;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+  }
+
+  header nav a {
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  main > img:first-child,
+  main > div:has(img),
+  section:first-of-type {
+    padding: 3rem 1.5rem;
+    gap: 2rem;
+  }
+
+  main > img:first-child {
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  a[href*="amzn"],
+  a[href*="amazon"],
+  button[type="submit"] {
+    width: 100%;
+    padding: 1.2rem 2rem;
+    font-size: 1.1rem;
+    margin: 1.5rem 0;
+  }
+
+  ul {
+    padding: 1.5rem;
+    margin: 1.5rem 1rem;
+  }
+
+  li {
+    font-size: 1rem;
+    padding: 0.8rem 0;
+  }
+
+  table {
+    font-size: 0.9rem;
+    margin: 2rem 1rem;
+  }
+
+  th, td {
+    padding: 0.8rem;
+  }
+
+  form {
+    padding: 2rem 1.5rem;
+    margin: 2rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 1rem;
+  }
+
+  header nav {
+    gap: 0.5rem;
+  }
+
+  header nav a {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  main > img:first-child,
+  main > div:has(img),
+  section:first-of-type {
+    padding: 2rem 1rem;
+  }
+
+  ul {
+    padding: 1rem;
+  }
+
+  form {
+    padding: 1.5rem 1rem;
   }
 }
