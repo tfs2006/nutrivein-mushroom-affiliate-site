@@ -1,0 +1,5 @@
+<svg width="170" height="40" viewBox="0 0 170 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <text x="2" y="28" font-size="26" font-family="Segoe UI, Arial, sans-serif" fill="#16813d" font-weight="bold">Nutrivein</text>
+  <ellipse cx="145" cy="15" rx="10" ry="5" fill="#ccb560" />
+  <path d="M140 10 Q143 5, 150 10 Q143 9, 140 10 Z" fill="#16813d"/>
+</svg>
