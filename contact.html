@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Nutrivein Affiliate Site</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Contact Nutrivein Affiliate for product questions, partnership, or feedback.">
+</head>
+<body>
+  <header class="header">
+    <img src="nutrivein-logo.svg" alt="Nutrivein Brand Logo" class="logo">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="review.html">Review</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Contact Us</h1>
+    <p>Questions about Nutrivein or this site? Submit the form below!</p>
+    <form action="https://formspree.io/f/moqzvjjy" method="POST" class="contact-form">
+      <label for="name">Name:</label>
+      <input required type="text" id="name" name="name" placeholder="Your name">
+
+      <label for="email">Your Email:</label>
+      <input required type="email" id="email" name="email" placeholder="you@email.com">
+
+      <label for="message">Message:</label>
+      <textarea required id="message" name="message" rows="4" placeholder="How can we help?"></textarea>
+
+      <input type="hidden" name="_subject" value="New submission on Nutrivein Affiliate site">
+      <button type="submit" class="cta-btn">Send Message</button>
+    </form>
+    <p>Contact support: <b>supplementnutrivein@4ourmedia.com</b></p>
+    <p><small>Edit the action URL above to update form email address.</small></p>
+  </main>
+  <footer>
+    <small>&copy; 2025 Nutrivein Affiliate Site | Form not connected to Nutrivein.com directly.</small>
+  </footer>
+</body>
+</html>
